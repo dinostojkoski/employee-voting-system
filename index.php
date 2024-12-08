@@ -24,13 +24,15 @@
     <div class="container w-50 shadow-lg p-3 bg-white rounded">
         <div class="text-center mt-4">
             <img class="mb-4" src="https://pabau.com/wp-content/uploads/2022/05/logo-final.svg" alt="" width="225" height="80">
+            <h1 class="text-dark-emphasis h2">Vote for an Employee</h1>
+            <p class="text-body-tertiary">Welcome to the Employee Appreciation Voting System</p>
         </div>
-        <h1 class="text-dark-emphasis h2">Vote for an Employee</h1>
-        <form method="POST" action="vote.php" class="p-5">
+        <form method="POST" action="vote.php" class="py-2 px-5">
             <label for="voter_id" class="form-label m-2">Your Name</label>
             <select name="voter_id" id="voter_id" class="form-control m-2"  required>
                 <option value="">Select your name</option>
                 <?php
+                // Fetch employees from db
                 include 'db.php';
                 $result = $conn->query("SELECT id, name FROM employees");
                 while ($row = $result->fetch_assoc()) {
@@ -43,6 +45,7 @@
             <select name="nominee_id" id="nominee_id" class="form-control m-2"  required>
                 <option value="">Select a nominee</option>
                 <?php
+                // Fetch employees from db
                 $result = $conn->query("SELECT id, name FROM employees");
                 while ($row = $result->fetch_assoc()) {
                     echo "<option value='{$row['id']}'>{$row['name']}</option>";
@@ -62,15 +65,20 @@
             <textarea name="comment" id="comment" class="form-control m-2" rows="2" required></textarea>
             
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary w-25">Submit Vote</button>
+                <button type="submit" class="btn btn-primary px-3 py-2">Submit Vote</button>
             </div>
+        </form>
+        <form action="result.view.php" method="get" class="text-center">
+            <button type="submit" class="btn btn-outline-secondary">Show Results</button>
+        </form>
+        <div>
             <?php
-                // Display the error message
+                // Display error message
                 if (isset($_GET['error'])) {
                     echo "<div class='alert alert-danger mt-4' role='alert'>" . htmlspecialchars($_GET['error']) . "</div>";
                 } 
             ?>
-        </form>
+        </div>
     </div>
 </body>
 </html>

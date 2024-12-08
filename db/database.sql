@@ -19,6 +19,11 @@
 -- Table structure for table `employees`
 --
 
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS voting_system;
+
+USE voting_system;
+
 DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;

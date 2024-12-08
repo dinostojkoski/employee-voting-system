@@ -2,7 +2,7 @@
 // Database configuration
 $host = 'localhost';
 $username = 'root';
-$password = '#Dino2708';
+$password = 'root';
 $database = 'voting_system';
 
 // Create connection
