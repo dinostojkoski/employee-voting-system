@@ -16,22 +16,22 @@ $winners = $results['winners'];
 </head>
 <body class="bg-primary p-5 text-dark bg-opacity-10">
     <div class="container shadow-lg p-3 bg-white rounded">
-            <div class="p-5">
-                <h1 class="display-6">Employee Appreciation Voting Results</h1>
-                <h1 class="display-6">Winners</h1>
-                <div class="results-list">
-                    <?php 
-                    foreach ($winners as $cat => $winner) {
-                        echo "<div class='result-item'>";
-                        echo "<h3>Winner for <mark>$cat</mark>:</h3>";
-                        echo "<p class='lead'>Employee {$winner['nominee_name']} with {$winner['votes']} votes</p>";
-                        echo "</div>";
-                    }
-                    ?>
-                </div>
-
-                <a href="index.php" class="btn btn-primary">Back to Voting</a>
+        <div class="p-5">
+            <h1 class="display-6">Employee Appreciation Voting Results</h1>
+            <h1 class="display-6">Winners</h1>
+            <div class="results-list">
+                <?php 
+                foreach ($winners as $cat => $winner) {
+                    echo "<div class='result-item'>";
+                    echo "<h3>Winner for <mark>$cat</mark>:</h3>";
+                    echo "<p class='lead'>Employee {$winner['nominee_name']} with {$winner['votes']} votes</p>";
+                    echo "</div>";
+                }
+                ?>
             </div>
+
+            <a href="index.php" class="btn btn-primary">Back to Voting</a>
+        </div>
     </div>
 </body>
 </html>

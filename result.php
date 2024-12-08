@@ -2,7 +2,6 @@
 include 'db.php';
 
 function get_results($conn) {
-    // Winners per category
     $categories = ["Makes Work Fun", "Team Player", "Culture Champion", "Difference Maker"];
     $winners = [];
 
